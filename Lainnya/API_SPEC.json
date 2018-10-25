@@ -1,0 +1,144 @@
+GET Employee API
+
+Http Method: GET
+"/employee"
+
+(DEFAULT, harus ada di setiap API, untuk support tipe data JSON)
+Request Header:
+	- content-type	: application/json
+	- Accept 		: application/json
+
+//CONTOH balikan response get employee adalah data employee jika berhasil dan error NotFound Jika Gagal
+
+Response Sukses
+{
+	"code" : "OK",
+	"status" : 200,
+	"content" : [
+		{
+			"id"		: "1"
+			"name" 		: "Achmad Nasution",	
+			"hp"		: "081351877952",
+			"email"		: "achmadynasution@gmail.com"
+		},
+		{
+			"id"		: "2"
+			"name" 		: "Samuel Napitupulu",	
+			"hp"		: "081312312312",
+			"email"		: "samuelanapitupulu@gmail.com"
+		}
+	]
+}
+
+Response Failed
+{
+	"code" : "NotFound",
+	"status" : 404,
+	"content" : null
+}
+
+
+CREATE Employee API
+
+Http Method: POST
+"/employee"
+
+(DEFAULT, harus ada di setiap API, untuk support tipe data JSON)
+Request Header:
+	- Content-type	: application/json
+	- Accept 		: application/json
+
+
+//CONTOH request employee yang akan disimpan
+Request Body:
+{
+	"name" 		: "Achmad Nasution",	
+	"hp"		: "081351877952",
+	"email"		: "achmadynasution@gmail.com"
+}
+
+
+//CONTOH balikan response create employee misal nya adalah true jika berhasil dan false jika gagal
+Response Sukses
+{
+	"code" : "OK",
+	"status" : 200,
+	"data" : true
+}
+
+Response Failed
+{
+	"code" : "OK",
+	"status" : 200,
+	"data" : false
+}
+
+
+UPDATE Employee API
+
+Http Method: Put
+"/employee/{employeeId}"
+
+(DEFAULT, harus ada di setiap API, untuk support tipe data JSON)
+Request Header:
+	- Content-type	: application/json
+	- Accept 		: application/json
+	
+Path Variable:
+employeeId
+
+//CONTOH update employee dengan id = 1 yang sebelumnya berisi nama Achmad Nasution
+Path Variable:
+"/employee/1"
+Request Body:
+{
+	"name" 		: "Eko Manurung",	
+	"hp"		: "081351877952",
+	"email"		: "achmadynasution@gmail.com"
+}
+
+
+//CONTOH balikan yang akan terjadi jika berhasil atau throw exception jika error
+Response Sukses
+{
+	"code" : "OK",
+	"status" : 200,
+	"data" : true
+}
+
+Response Failed
+{
+	"code" : "Not Found",
+	"status" : 404,
+	"message" : "Employee not found with Id 2"
+}
+
+
+DELETE Employee API
+
+Http Method: Delete
+"/emplyee/{employeeId}"
+
+(DEFAULT, harus ada di setiap API, untuk support tipe data JSON)
+Request Header:
+	- Content-type	: application/json
+	- Accept 		: application/json
+	
+Path Variable:
+employeeId
+
+//CONTOH response delete employee dengan id = 1
+Path Variable:
+"/employee/1"
+Response Sukses
+{
+	"code" : "OK",
+	"status" : 200,
+	"data" : true
+}
+Response Failed
+{
+	"code" : "Not Found",
+	"status" : 404,
+	"message" : "Employee not found with Id 1"
+}

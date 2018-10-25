@@ -1,0 +1,36 @@
+HTTP ?
+1. TodoController
+    - Get
+    - Post
+    - Put
+    - Delete
+2. MemberController
+    - Get
+    - Post
+    - Put
+    - Delete
+Method Name ?
+1. TodoController
+    - getTodoByMemberId
+    - addTodo
+    - updateTodo
+    - deleteTodo
+2. MemberController
+    - getMember
+    - createMember
+    - updateMember
+    - deleteMember
+API Path ?
+1. TodoController
+    - getTodoByMemberId("/member/{memberId}/todo")
+    - addTodo("/member/{memberId}/todo")
+    - updateTodo("/member/{memberId}/todo/{todoId}")
+    - deleteTodo("/member/{memberId}/todo/{todoId}")
+2. MemberController
+    - getMember("/member")
+    - createMember("/member")
+    - updateMember("/member/{memberId}")
+    - deleteMember("/member/{memberId}")
+Parameter Request ?
+
+Response ?
